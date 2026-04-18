@@ -1,0 +1,36 @@
+$primary-color: #1890ff;
+$border-color: #d9d9d9;
+
+.v-tabs {
+  &-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    border-bottom: 1px solid $border-color;
+
+    li {
+      padding: 12px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+      // 这里的负 margin 是为了让激活状态的蓝色底边框刚好盖住那条灰色的下划线
+      margin-bottom: -1px; 
+      border-bottom: 2px solid transparent;
+
+      &:hover { color: $primary-color; }
+      
+      &.is-active {
+        color: $primary-color;
+        font-weight: 500;
+        border-bottom: 2px solid $primary-color;
+      }
+    }
+  }
+
+  &-content {
+    padding: 8px 0;
+    font-size: 14px;
+    color: #333;
+  }
+}

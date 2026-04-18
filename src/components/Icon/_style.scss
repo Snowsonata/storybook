@@ -1,0 +1,20 @@
+// 定义一个颜色字典 (Map)
+$theme-colors: (
+  "primary": #1890ff,
+  "success": #52c41a,
+  "warning": #faad14,
+  "danger": #ff4d4f,
+);
+
+.v-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  // 循环生成颜色类名
+  @each $name, $color in $theme-colors {
+    &.icon-#{$name} {
+      color: $color; // 让外层的 span 拥有颜色，内部的 SVG 会自动继承这个颜色
+    }
+  }
+}

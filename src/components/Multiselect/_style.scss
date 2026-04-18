@@ -1,0 +1,114 @@
+// src/components/Multiselect/_style.scss
+
+$primary-color: #1890ff;
+$border-color: #d9d9d9;
+$border-radius: 4px;
+
+.v-multiselect {
+  position: relative; // 重点：为下拉框的绝对定位提供基准
+  width: 100%;
+  min-width: 200px;
+  font-family: sans-serif;
+
+  // 1. 触发器 (长得像输入框的区域)
+  &-trigger {
+    min-height: 38px;
+    padding: 2px 8px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $primary-color;
+    }
+    
+    // 打开时的样式 (边框变蓝，发光)
+    &.is-open {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    }
+  }
+
+  &-placeholder {
+    color: #bfbfbf;
+    padding: 4px 0;
+  }
+
+  // 2. 选中的 Tags 容器
+  &-tags {
+    display: flex;
+    flex-wrap: wrap; // 选多了会自动换行
+    gap: 4px;        // 标签之间的间距
+  }
+
+  // 单个 Tag 的样式
+  .v-tag {
+    background-color: #f5f5f5;
+    border: 1px solid #f0f0f0;
+    border-radius: 2px;
+    padding: 0 4px 0 8px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+
+    &-close {
+      margin-left: 4px;
+      color: #999;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #ff4d4f; // 鼠标移上去变红
+      }
+    }
+  }
+
+  // 3. 下拉列表 (重点：悬浮在页面上方)
+  &-dropdown {
+    position: absolute; // 重点：绝对定位，脱离文档流
+    top: calc(100% + 4px); // 贴在触发器正下方，留出 4px 空隙
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 4px 0;
+    list-style: none;
+    background-color: #fff;
+    border-radius: $border-radius;
+    box-shadow: 0 3px 6px -4px rgba(0,0,0,0.12), 0 6px 16px 0 rgba(0,0,0,0.08), 0 9px 28px 8px rgba(0,0,0,0.05);
+    z-index: 1000; // 保证在最上层
+    max-height: 250px;
+    overflow-y: auto; // 内容多了出滚动条
+  }
+
+  // 单个选项
+  &-option {
+    padding: 5px 12px;
+    line-height: 22px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between; // 让文字在左，对勾在右
+    align-items: center;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    // 选中状态
+    &.is-selected {
+      background-color: #e6f7ff;
+      color: $primary-color;
+      font-weight: 600;
+    }
+
+    .check-icon {
+      color: $primary-color;
+    }
+  }
+}
