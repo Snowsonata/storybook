@@ -1,0 +1,12 @@
+import{a as e,n as t}from"./chunk-BneVvdWh.js";import{O as n}from"./iframe-AJzGP-UB.js";import{t as r}from"./jsx-runtime-D16BNjX-.js";import{t as i}from"./classnames-BmD4jabB.js";var a=t((()=>{})),o,s,c,l,u=t((()=>{o=e(n(),1),s=e(i(),1),a(),c=r(),l=e=>{let{message:t,description:n,type:r=`info`,closable:i=!0,onClose:a,className:l}=e,[u,d]=(0,o.useState)(!1),f=(0,s.default)(`v-alert`,l,{[`v-alert-${r}`]:r,"v-alert-with-desc":n}),p=e=>{d(!0),a&&a(e)};return u?null:(0,c.jsxs)(`div`,{className:f,"data-testid":`test-alert`,children:[(0,c.jsxs)(`div`,{className:`v-alert-content`,children:[(0,c.jsx)(`span`,{className:`v-alert-message`,children:t}),n&&(0,c.jsx)(`p`,{className:`v-alert-description`,children:n})]}),i&&(0,c.jsx)(`button`,{type:`button`,className:`v-alert-close-icon`,onClick:p,children:`X`})]})},l.__docgenInfo={description:``,methods:[],displayName:`Alert`,props:{message:{required:!0,tsType:{name:`string`},description:`警告提示内容 (主标题)`},description:{required:!1,tsType:{name:`string`},description:`警告提示的辅助性文字介绍 (可选)`},type:{required:!1,tsType:{name:`union`,raw:`'success' | 'info' | 'warning' | 'error'`,elements:[{name:`literal`,value:`'success'`},{name:`literal`,value:`'info'`},{name:`literal`,value:`'warning'`},{name:`literal`,value:`'error'`}]},description:`指定警告提示的样式，有四种选择 (可选，默认 info)`},closable:{required:!1,tsType:{name:`boolean`},description:`默认不显示关闭按钮 (可选)`},onClose:{required:!1,tsType:{name:`signature`,type:`function`,raw:`(e: React.MouseEvent<HTMLButtonElement>) => void`,signature:{arguments:[{type:{name:`ReactMouseEvent`,raw:`React.MouseEvent<HTMLButtonElement>`,elements:[{name:`HTMLButtonElement`}]},name:`e`}],return:{name:`void`}}},description:`关闭时触发的回调函数 (可选)`},className:{required:!1,tsType:{name:`string`},description:`自定义最外层类名 (组件库标配，方便用户覆盖样式)`}}}})),d,f,p,m;t((()=>{u(),d={title:`Components/Alert`,component:l,tags:[`autodocs`]},f={args:{message:`这是一条默认提示`}},p={args:{type:`success`,message:`成功操作`,description:`详细的成功描述信息写在这里。`,closable:!0}},f.parameters={...f.parameters,docs:{...f.parameters?.docs,source:{originalSource:`{
+  args: {
+    message: '这是一条默认提示'
+  }
+}`,...f.parameters?.docs?.source}}},p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{
+  args: {
+    type: 'success',
+    message: '成功操作',
+    description: '详细的成功描述信息写在这里。',
+    closable: true
+  }
+}`,...p.parameters?.docs?.source}}},m=[`Default`,`SuccessWithDescription`]}))();export{f as Default,p as SuccessWithDescription,m as __namedExportsOrder,d as default};
