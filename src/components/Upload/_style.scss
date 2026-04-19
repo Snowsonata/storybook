@@ -1,0 +1,61 @@
+$primary-color: #1890ff;
+$error-color: #ff4d4f;
+$success-color: #52c41a;
+$text-color: #333;
+$border-color: #d9d9d9;
+
+.v-upload-component {
+  .v-file-input {
+    display: none;
+  }
+}
+
+.v-upload-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &-item {
+    transition: all 0.3s;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.8;
+    margin-top: 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    .file-name {
+      color: $text-color;
+      flex: 1;
+      margin-right: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .file-status {
+      margin-right: 15px;
+      font-size: 12px;
+    }
+
+    .file-actions button {
+      background: none;
+      border: none;
+      color: #999;
+      cursor: pointer;
+      &:hover { color: $error-color; }
+    }
+
+    // 根据状态改变颜色
+    &.is-uploading { color: $primary-color; }
+    &.is-success .file-name { color: $success-color; }
+    &.is-error .file-name { color: $error-color; }
+  }
+}
